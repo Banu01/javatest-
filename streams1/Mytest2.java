@@ -1,0 +1,154 @@
+/**
+ * Mytest22
+//  */
+// Exercise 9:
+
+// Class Employee{
+// int empid;
+// String name;
+// String dept;
+// float salary;
+// }
+
+// Use Java Stream
+
+// Total salary of all employees
+// Total salary for each dept
+// Which department getting highest salary
+// Who is getting lowest salary
+// Who are all getting same salary
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
+import java.util.OptionalLong;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+
+import com.sun.org.apache.xpath.internal.operations.Equals;
+
+public class Mytest2 {
+    int empid;
+    String name;
+    String dept;
+    float salary;
+
+    /**
+     * @return the dept
+     */
+    public String getDept() {
+        return dept;
+    }
+
+    /**
+     * @return the empid
+     */
+    public int getEmpid() {
+        return empid;
+    }
+
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @return the salary
+     */
+    public float getSalary() {
+        return salary;
+    }
+
+    /**
+     * @param dept the dept to set
+     */
+    public void setDept(String dept) {
+        this.dept = dept;
+    }
+
+    /**
+     * @param empid the empid to set
+     */
+    public void setEmpid(int empid) {
+        this.empid = empid;
+    }
+
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * @param salary the salary to set
+     */
+    public void setSalary(float salary) {
+        this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return empid + " " + name + " " + salary + " " + dept;
+    }
+
+    public static void main(String[] args) {
+        Mytest2 mm = new Mytest2();
+        ArrayList<Mytest2> al = new ArrayList<Mytest2>();
+        mm.setDept("sony");
+        mm.setEmpid(1);
+        mm.setName("abc");
+        mm.setSalary(20000);
+        al.add(mm);
+
+        Mytest2 m2 = new Mytest2();
+        m2.setDept("sap");
+        m2.setEmpid(7);
+        m2.setName("rst");
+        m2.setSalary(50000);
+        al.add(m2);
+
+        Mytest2 m3 = new Mytest2();
+        m3.setDept("rpa");
+        m3.setEmpid(2);
+        m3.setName("xyz");
+        m3.setSalary(30000);
+        al.add(m3);
+
+        Mytest2 m4 = new Mytest2();
+        m4.setDept("java");
+        m4.setEmpid(5);
+        m4.setName("rst");
+        m4.setSalary(50000);
+        al.add(m4);
+
+        System.out.println("Array List" + al);
+        // al.forEach(System.out::println);
+
+        System.out.println("\n\n minimum salary");
+        al.stream().min(Comparator.comparing(Mytest2::getSalary)).ifPresent(s -> System.out.println(s));
+        System.out.println("\n\n\n maximum salary");
+        al.stream().max(Comparator.comparing(Mytest2::getSalary)).ifPresent(j -> System.out.println(j));
+
+        System.out.println("\n\n\n highest salary");
+        // al.stream().max(Comparator.comparing(Mytest2::getSalary)).ifPresent(j->System.out.println(j));
+
+        // Optional<Long> ll = al.stream().max(Comparator.comparing(Mytest2::getSalary)).map(p -> p.getDept())
+        //         .collect(Collectors.toList());
+        // .ifPresent(j -> System.out.println(j));
+
+        System.out.println("total salary for eachdepartment");
+        double ah = al.stream().mapToDouble(o -> o.getSalary()).sum();
+        System.out.println(ah);
+        // float sum1 = al.stream().map(Mytest2 :: getSalary()).sum);
+        // System.out.println("Total m1----->" + sum1);
+
+System.out.println("equal salary");
+//float jj=al.stream().equals(Mytest::getSalary());
+//al.stream().
+    }
+}
