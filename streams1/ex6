@@ -1,0 +1,80 @@
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+public class Ex66 {
+    public static void main(String[] args) throws NumberFormatException, IOException {
+        ArrayList<String> al=new ArrayList<String>();
+
+
+al.add("banu");
+al.add("uma");
+int choice;
+
+do{
+    System.out.println("*********enter ypour operation choice*********");
+    System.out.println("0:display");
+System.out.println("1:add new ");
+System.out.println("2:remove ");
+System.out.println("3:change");
+
+
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            choice = Integer.parseInt(br.readLine());
+            
+String name;
+int salary;
+
+switch(choice)
+{
+    case 0:
+    System.out.println("\n currently in ArrayList are " );
+    Iterator<String> it = al.iterator();
+    while(it.hasNext()){
+        System.out.println(it.next() + " ");
+    }
+    break;
+case 1:
+    System.out.println("Enter name");
+    name = br.readLine();
+    System.out.println("Enter salary");
+    salary = Integer.parseInt(br.readLine());
+    al.add(salary-1, name);
+   // System.out.println(al);
+    break;
+case 2:
+    System.out.println("Enter  to remove");
+                try {
+                    name = br.readLine();
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+   // al.remove(name(name));
+
+
+
+
+    break;
+case 3:
+    System.out.println("Enter place to where");
+    salary = Integer.parseInt(br.readLine());
+    System.out.println("Enter  name");
+    name = br.readLine();
+   al.set(salary-1, name);
+    break;
+default:
+    System.out.println("Exiting program");
+    return;
+}
+
+}while(choice < 4 && choice >= 0);
+}
+
+
+
+
+
+ }
+
+    
