@@ -64,17 +64,7 @@ PatternFormatting fill2 = rule2.createPatternFormatting();
         CellRangeAddress.valueOf("F1:F5")
       };
       sheetCF.addConditionalFormatting(regions1, rule22);
-      ConditionalFormattingRule rule223 = sheetCF.createConditionalFormattingRule
-      ( ComparisonOperator.);
-
-     PatternFormatting fill4=rule223.createPatternFormatting();
-     fill3.setFillBackgroundColor(IndexedColors.GREY_80_PERCENT.index);
-     fill3.setFillPattern(PatternFormatting.SOLID_FOREGROUND);
-     CellRangeAddress[] regions2={
-       CellRangeAddress.valueOf("B1:B5"),
-       
-     };
-     sheetCF.addConditionalFormatting(regions2, rule223);
+    
 
 
 
