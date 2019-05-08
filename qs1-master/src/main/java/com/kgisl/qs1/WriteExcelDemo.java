@@ -2,6 +2,7 @@ package com.kgisl.qs1;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
@@ -13,7 +14,7 @@ import org.apache.poi.ss.usermodel.Row;
  
 public class WriteExcelDemo
 {
-    public static void main(String[] args)
+    public static void main(String[] args)throws IOException
     {
         //Blank workbook
         XSSFWorkbook workbook = new XSSFWorkbook();

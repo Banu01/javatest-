@@ -20,8 +20,8 @@ public class Sample {
     public static void main(String[] args) {
         XSSFWorkbook ob=new XSSFWorkbook();
 
-
-        XSSFSheet oc=ob.createSheet("studentcalculation");
+XSSFSheet oc=ob.createSheet("Attendance calculation");
+       // XSSFSheet oc=ob.createSheet("studentcalculation");
 
         Map<String,Object[]> mm=new TreeMap<String,Object[]>();
         mm.put("1",new Object[]{"sno","name","m1","m2"});
@@ -60,7 +60,7 @@ if(row.getRowNum()==0)
 }
         }
         try{
-            FileOutputStream fo=new FileOutputStream(new File("d://my.xlsx"));
+            FileOutputStream fo=new FileOutputStream(new File("d://mybook.xlsx"));
             ob.write(fo);
             fo.close();
             System.out.println("successfully........................");
